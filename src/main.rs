@@ -1,4 +1,3 @@
-#![feature(stmt_expr_attributes)]
 use crate::{group::Group, member::Member};
 
 mod group;

@@ -1,12 +1,9 @@
-#![allow(dead_code)]
 use std::collections::HashMap;
 
 use crate::member::Member;
 
 #[derive(Debug)]
 pub enum GroupError<'a> {
-    FullCap(&'a str),
-    NameUsed(&'a str),
     MemberNotExists(&'a str),
 }
 
@@ -23,8 +20,6 @@ impl<'a, const S: usize> Group<'a, S> {
             members: HashMap::new(),
         }
     }
-
-    pub fn get_size(&self) -> usize { S }
 
     pub fn get(&self, name: &'a str) -> Option<&Member<'a, S>> { self.members.get(name) }
 
